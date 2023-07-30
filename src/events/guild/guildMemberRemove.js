@@ -14,14 +14,13 @@ module.exports = {
             if (!data) return;
             let channel = data.Channel;
             let Msg = data.Msg || " ";
-            let Role = data.Role;
 
-            const {user, guild} = member;
-            const leaveChannel = member.guild.channels.cache.get(data.Channel);
+            const { guild } = member;
+            const leaveChannel = member.guild.channels.cache.get(channel);
 
             const leaveEmbed = new EmbedBuilder()
                 .setTitle('**👋 BYE BYE 👋**')
-                .setDescription(`<@${member.id}> ${data.Msg} **${guild.name}**`)
+                .setDescription(`<@${member.id}> ${Msg} **${guild.name}**`)
                 .setColor("#FFAEC9")
                 .addFields({
                     name: "Total Member",
