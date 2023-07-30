@@ -13,7 +13,7 @@ module.exports = {
                 .setName('channel')
                 .setDescription('The channel you want to be your join to create vc')
                 .setRequired(true)
-                .addChannelTypes(ChannelType.GuildText)
+                .addChannelTypes(ChannelType.GuildVoice)
             )
             .addChannelOption(option => option
                 .setName('category')
