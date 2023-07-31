@@ -63,7 +63,7 @@ module.exports = {
 
                     const cvEmbed = new EmbedBuilder()
                         .setColor("#FFAEC9")
-                        .setDescription(`The Systems has been setup in ${channel}, all new voice channel will be created in ${category}`)
+                        .setDescription(`🔊 The Systems has been setup in ${channel}, all new voice channel will be created in ${category}`)
                     
                     await interaction.reply({ embeds: [cvEmbed] });
                 }
@@ -74,7 +74,7 @@ module.exports = {
                 }else{
                     const disableEmbed = new EmbedBuilder()
                         .setColor("FFAEC9")
-                        .setDescription("The Systems has been **DISABLED**")
+                        .setDescription("🔇 The Systems has been **DISABLED**")
                     
                     await createvoiceSchema.deleteOne({ Guild: interaction.guild.id });
                     await interaction.reply({ embeds: [disableEmbed] });
