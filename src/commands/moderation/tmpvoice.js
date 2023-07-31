@@ -3,7 +3,7 @@ const createvoiceSchema = require('../../models/createvoice');
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName("createvoice")
+        .setName("tmpvoice")
         .setDescription("Setup and Disable your join to create voice channel.")
         .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
         .addSubcommand(command => command
@@ -48,7 +48,11 @@ module.exports = {
         switch (sub) {
             case 'setup':
                 if(data) {
-                    return await interaction.reply({ content: "You already have a setup systems!", ephemeral: true });
+                    const errEmbed = new EmbedBuilder()
+                        .setColor("#FFAEC9")
+                        .setDescription(`"You already have a setup systems!"`)
+                    
+                    await interaction.reply({ embeds: [errEmbed], ephemeral: true });
                  }else{
                     const channel = interaction.options.getChannel('channel');
                     const category = interaction.options.getChannel('category');
@@ -70,7 +74,11 @@ module.exports = {
                 break;
             case 'disable':
                 if(!data){
-                    return await interaction.reply({ content: "You dont have the join to create systems setup yet!", ephemeral: true });
+                    const err2Embed = new EmbedBuilder()
+                        .setColor("#FFAEC9")
+                        .setDescription(`You dont have the join to create systems setup yet!`)
+                    
+                    await interaction.reply({ embeds: [err2Embed], ephemeral: true });
                 }else{
                     const disableEmbed = new EmbedBuilder()
                         .setColor("FFAEC9")
