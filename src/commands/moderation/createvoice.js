@@ -3,8 +3,8 @@ const createvoiceSchema = require('../../models/createvoice');
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName("join-to-create")
-        .setDescription("Setup and disable your join to create voice channel.")
+        .setName("createvoice")
+        .setDescription("Setup and Disable your join to create voice channel.")
         .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
         .addSubcommand(command => command
             .setName('setup')
@@ -48,7 +48,7 @@ module.exports = {
         switch (sub) {
             case 'setup':
                 if(data) {
-                    return await interaction.reply({ content: "You already have a setup join to create systems! Do /join-to-create disable to remove it", ephemeral: true });
+                    return await interaction.reply({ content: "You already have a setup systems!", ephemeral: true });
                  }else{
                     const channel = interaction.options.getChannel('channel');
                     const category = interaction.options.getChannel('category');
@@ -63,7 +63,7 @@ module.exports = {
 
                     const cvEmbed = new EmbedBuilder()
                         .setColor("#FFAEC9")
-                        .setDescription(`The join to create systems has been setup in ${channel}, all new VC will be created in ${category}`)
+                        .setDescription(`The Systems has been setup in ${channel}, all new voice channel will be created in ${category}`)
                     
                     await interaction.reply({ embeds: [cvEmbed] });
                 }
@@ -74,7 +74,7 @@ module.exports = {
                 }else{
                     const disableEmbed = new EmbedBuilder()
                         .setColor("FFAEC9")
-                        .setDescription("The join to create systems has been **DISABLED**")
+                        .setDescription("The Systems has been **DISABLED**")
                     
                     await createvoiceSchema.deleteOne({ Guild: interaction.guild.id });
                     await interaction.reply({ embeds: [disableEmbed] });

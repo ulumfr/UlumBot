@@ -4,7 +4,7 @@ const leaveSchema = require("../../models/leave");
 module.exports = {
     data: new SlashCommandBuilder()
         .setName("leave")
-        .setDescription("Setup your leave messages.")
+        .setDescription("Setup and Disable your leave messages.")
         .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
         .addSubcommand(command => command
             .setName('setup')

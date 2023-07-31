@@ -4,7 +4,7 @@ const welcomeSchema = require("../../models/welcome");
 module.exports = {
     data: new SlashCommandBuilder()
         .setName("welcome")
-        .setDescription("Setup your welcome messages.")
+        .setDescription("Setup and Disable your welcome messages.")
         .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
         .addSubcommand(command => command
             .setName('setup')
