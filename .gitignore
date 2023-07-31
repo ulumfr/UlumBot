@@ -3,3 +3,6 @@ node_modules/
 
 # Configuration API, Token, Mongo
 config/config.json
+
+# Secret Folder
+tmpresource/
