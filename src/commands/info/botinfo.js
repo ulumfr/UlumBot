@@ -1,10 +1,8 @@
 const { SlashCommandBuilder, EmbedBuilder, ChatInputCommandInteraction, Client, version } = require("discord.js");
-
 const { connection } = require("mongoose");
 
 module.exports = {
-
-    data : new SlashCommandBuilder()
+    data: new SlashCommandBuilder()
         .setName("botinfo")
         .setDescription("Receive information regarding the bot."),
 
