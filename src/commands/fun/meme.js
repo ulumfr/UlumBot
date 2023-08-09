@@ -34,7 +34,7 @@ module.exports = {
             await interaction.reply({ embeds: [memeEmbed] });
         } catch (error) {
             await interaction.editReply({ content: 'TRY AGAIN!' });
-            await interaction.deleteReply()
+
             console.log(error)
         }
     },
