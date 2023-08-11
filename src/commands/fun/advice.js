@@ -9,14 +9,12 @@ module.exports = {
     async execute(interaction) {
         const data = await fetch("https://api.adviceslip.com/advice").then((res) => res.json() );
     
-        interaction.reply({
-            embeds: [
-                new EmbedBuilder()
-                    .setTitle("Advice for you")
-                    .setDescription(`Take it or leave it! \n "**${data.slip.advice}**"`)
-                    .setColor("#FFAEC9")
-                    .setFooter({ text: `Advice Generated`})
-            ],
-        });
+        const adviceEmbed = new EmbedBuilder()
+            .setTitle("Advice for you")
+            .setDescription(`Take it or leave it! \n "**${data.slip.advice}**"`)
+            .setColor("#FFAEC9")
+            .setFooter({ text: `Advice Generated`})
+
+        interaction.reply({ embeds: [adviceEmbed] });
     },
 };

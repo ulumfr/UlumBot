@@ -16,9 +16,7 @@ module.exports = {
  
         let data = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
  
-        if (data.statusText == 'Not Found') {
-            return interaction.reply({ content: 'that word does not exist', ephemeral: true});
-        }
+        if (data.statusText == 'Not Found') return interaction.reply({ content: 'that word does not exist', ephemeral: true});
  
         let info = await data.json();
         let result = info[0];

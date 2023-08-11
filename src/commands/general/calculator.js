@@ -8,10 +8,7 @@ module.exports = {
 
     async execute(interaction) {
         const idPrefix = 'calulator'
-        const embed = new EmbedBuilder()
-            .setDescription("```\nDisplay\n```")
-            .setColor('#FFAEC9')
- 
+       
         const row = new ActionRowBuilder()
             .addComponents(
                 new ButtonBuilder()
@@ -112,7 +109,11 @@ module.exports = {
                     .setStyle(ButtonStyle.Primary)
             )
  
-        const msg = await interaction.reply({ embeds: [embed], components: [row, row1, row2, row3, row4], ephemeral: false });
+        const calcuEmbed = new EmbedBuilder()
+            .setDescription("```\nResults will be displayed here\n```")
+            .setColor('#FFAEC9')
+ 
+        const msg = await interaction.reply({ embeds: [calcuEmbed], components: [row, row1, row2, row3, row4], ephemeral: false });
  
         let data = "";
         const col = msg.createMessageComponentCollector({
@@ -146,8 +147,11 @@ module.exports = {
                     (lc == parseInt(lc) || lc === ".")
                 ) || data.length === 0 ? "" : " "}` + value;
             }
- 
-            i.update({ embeds: [new EmbedBuilder().setColor('#FFAEC9').setDescription(`\`\`\`\n${data || extra}\n\`\`\``)], components: [row, row1, row2, row3, row4], ephemeral: false })
+            const updateEmbed = new EmbedBuilder()
+                .setColor('#FFAEC9')
+                .setDescription(`\`\`\`\n${data || extra}\n\`\`\``)
+            
+            i.update({ embeds: [updateEmbed], components: [row, row1, row2, row3, row4], ephemeral: false })
         })
     }
 }

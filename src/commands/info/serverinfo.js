@@ -33,7 +33,6 @@ module.exports = {
                 { name: `**Roles In Server**`, value: `${roles.cache.size - 1}`, inline: true },
                 { name: `**Roles**`, value: `${totRoles}`, inline: true },
                 { name: `**Highest Role**`, value: `${roles.highest}`, inline: true },
-                { name: `**Server Stats:**`, value: `Total: ${channels.cache.size}\n${channels.cache.filter(channel => channel.type === ChannelType.GuildText).size} ⌨️\n${channels.cache.filter(channel => channel.type === ChannelType.GuildVoice).size} 🔈\n${channels.cache.filter(channel => channel.type === ChannelType.GuildAnnouncement).size} 📢\n${channels.cache.filter(channel => channel.type === ChannelType.GuildCategory).size} 📁`},
             )
             .setFooter({ text: guild.name, iconURL: icon })
 

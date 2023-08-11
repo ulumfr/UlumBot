@@ -12,14 +12,12 @@ module.exports = {
         await interaction.deferReply({ fetchReply: true });
 
         try {
-            const agent = new https.Agent({  
-                rejectUnauthorized: false
-            });
+            const agent = new https.Agent({ rejectUnauthorized: false });
             
             const res = await axios.get(`https://reddit.com/r/memes/random/.json`,{
                 httpsAgent: agent,
                 timeout: 10000,
-            })
+            });
 
             const data = res.data[0].data.children[0].data;
             const memeEmbed = new EmbedBuilder()
@@ -34,7 +32,6 @@ module.exports = {
             await interaction.reply({ embeds: [memeEmbed] });
         } catch (error) {
             await interaction.editReply({ content: 'TRY AGAIN!' });
-
             console.log(error)
         }
     },

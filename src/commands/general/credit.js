@@ -23,6 +23,5 @@ module.exports = {
             .setTimestamp()
 
         await interaction.reply({ embeds: [creditEmbed] });
-
     }
 }

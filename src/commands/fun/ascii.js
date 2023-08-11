@@ -17,22 +17,16 @@ module.exports = {
 
         figlet(`${text}`, function (err, data) {
 
-            if (err) {
-                return interaction.reply({ content: `**Oops!** Something went **extremely** wrong, try again later!`, ephemeral: true})
-            }
-
-            if (filter.words.includes(text)) {
-                return interaction.reply({ content: `You can't say that!`, ephemeral: true});
-            }
+            if (err) return interaction.reply({ content: `**Oops!** Something went **extremely** wrong, try again later!`, ephemeral: true})
+            if (filter.words.includes(text)) return interaction.reply({ content: `You can't say that!`, ephemeral: true});
 
             const embed = new EmbedBuilder()
-            .setColor('#FFAEC9')
-            .setFooter({ text: `Ascii Art Generated`})
-            .setDescription(`\`\`\`${data}\`\`\``)
-            .setTimestamp()
+                .setColor('#FFAEC9')
+                .setFooter({ text: `Ascii Art Generated`})
+                .setDescription(`\`\`\`${data}\`\`\``)
+                .setTimestamp()
 
             interaction.reply({ embeds: [embed] });
-        
         });
     }
 }

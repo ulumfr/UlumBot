@@ -9,12 +9,12 @@ module.exports = {
     async execute(interaction) {
         const { member } = interaction;
 
-        let jEmbed = new EmbedBuilder()
+        const jokeEmbed = new EmbedBuilder()
             .setDescription(joke.getRandomJoke().body)
             .setColor("#FFAEC9")
             .setTimestamp()
             .setFooter({ text: `Requested by ${member.user.tag}`, iconURL: member.displayAvatarURL() });
             
-        return interaction.reply({ embeds: [jEmbed] });
+        return interaction.reply({ embeds: [jokeEmbed] });
     }
 };
