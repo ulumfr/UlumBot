@@ -2,6 +2,7 @@ const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
 const config = require("../../../config/config.json");
 const axios = require("axios");
 
+//LINK : https://rapidapi.com/farolan/api/url-shortener23
 module.exports = {
     data: new SlashCommandBuilder()
         .setName("urlshortener")
@@ -14,7 +15,6 @@ module.exports = {
         .addStringOption(option => option
             .setName("alias")
             .setDescription("(Optional) The alias for your short link")
-            .setRequired(true)
         ),
     
     async execute(interaction){

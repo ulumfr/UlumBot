@@ -2,6 +2,7 @@ const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
 const config = require("../../../config/config.json");
 const axios = require("axios");
 
+//LINK : https://rapidapi.com/ajith/api/qr-code-generator-with-multiple-datatypes-
 module.exports = {
     data: new SlashCommandBuilder()
         .setName("qrcode")
