@@ -78,7 +78,7 @@ module.exports = {
                 new ButtonBuilder()
                     .setLabel('Server Penguasa Rakyat')
                     .setStyle(ButtonStyle.Link)
-                    .setURL('https://discord.gg/V6nB2YU9'),
+                    .setURL('https://discord.gg/y6MfNeXKPj'),
                 new ButtonBuilder()
                     .setLabel('Ulum Bot Invite')
                     .setStyle(ButtonStyle.Link)

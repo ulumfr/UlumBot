@@ -20,7 +20,7 @@ client.config = require("./config/config.json");
 client.on(Events.VoiceStateUpdate, async(oldState, newState) =>{
     handlevoicejoin(oldState, newState);
     handlevoiceleave(oldState, newState);
-})
+});
 
 client.login(client.config.TOKEN).then(() => {
     loadEvents(client);

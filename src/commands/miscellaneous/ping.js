@@ -30,12 +30,12 @@ module.exports = {
         const msg = await interaction.reply({ embeds: [embed], components: [refreshButton] })
 
         const collector = msg.createMessageComponentCollector()
-        collector.on('collect', 
-            async i => {
-                if(i.customId == 'refreshButton') {
-                    i.update({ embeds: [embed], components: [refreshButton] })
+            collector.on('collect', 
+                async i => {
+                    if(i.customId == 'refreshButton') {
+                        i.update({ embeds: [embed], components: [refreshButton] })
+                    }
                 }
-            }
-        )
+            )
     }
 }

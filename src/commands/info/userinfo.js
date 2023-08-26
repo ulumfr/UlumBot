@@ -11,7 +11,9 @@ module.exports = {
 
     async execute(interaction) {
         const { options } = interaction;
+
         await interaction.deferReply();
+
         let user = options.getUser('user') || interaction.user;
         let member = await interaction.guild.members.fetch(user.id);
         let icon = user.displayAvatarURL();
@@ -33,7 +35,6 @@ module.exports = {
             if (badge === "VerifiedBot") badges.push(`<:VerifiedBot:1134785893656436736>`)
             if (badge === "PremiumEarlySupporter") badges.push(`<:EarlySupporter:1134785898190475355>`)
             if (badge === "HypeSquad") badges.push(`<:Hypesquad:1134785912849567835>`)
-            // "imageremovebg": `<:imageremovebgpreview8:1134785916934819930>`,
         }))
         
         const userData = await fetch(`https://japi.rest/discord/v1/user/${user.id}`);
@@ -67,7 +68,7 @@ module.exports = {
             badges.push(`<:Knownas:1134785883669803018>`);
         };
             
-        const embed = new EmbedBuilder()
+        const userinfoEmbed = new EmbedBuilder()
             .setColor("#FFAEC9")
             .setAuthor({ name: tag, iconURL: icon })
             .setThumbnail(icon)
@@ -79,6 +80,6 @@ module.exports = {
             .setFooter({ text: `User ID: ${user.id}` })
             .setTimestamp();
 
-        await interaction.editReply({ embeds: [embed] });
+        await interaction.editReply({ embeds: [userinfoEmbed] });
     }
 };

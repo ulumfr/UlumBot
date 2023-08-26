@@ -11,7 +11,7 @@ const openai = new OpenAIApi(configuration);
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('chatgpt')
-        .setDescription('(NOT READY (API)) Ask chatgpt a question!')
+        .setDescription('(NO API = NO READY) Ask chatgpt a question!')
         .addStringOption(option => option
             .setName('question')
             .setDescription('This is going to be the question for chatgpt')
