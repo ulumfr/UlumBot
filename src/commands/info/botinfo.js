@@ -49,7 +49,7 @@ module.exports = {
             )
 
         await interaction.editReply({embeds: [botinfoEmbed] });
-        await wait(10000)
+        await wait(10000);
         await interaction.deleteReply();
     }
 };

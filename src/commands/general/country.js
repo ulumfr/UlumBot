@@ -44,8 +44,8 @@ module.exports = {
             await interaction.editReply({ embeds: [countryEmbed] })
         } catch (error) {
             await interaction.editReply({ content: `Their Was An Error While Getting Data From API, Try Again Later`, ephemeral: true })
-            await wait(6000)
-            await interaction.deleteReply()
+            await wait(6000);
+            await interaction.deleteReply();
         }
     }
 }

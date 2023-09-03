@@ -9,9 +9,8 @@ module.exports = {
         .setDMPermission(true),
 
     async execute(interaction, client) {
-        await interaction.deferReply({ fetchReply: true });
-
         try {
+            //PASTIKAN DNS TIDAK TERBLOCKED PADA SITUS REDDIT
             const agent = new https.Agent({ rejectUnauthorized: false });
             
             const res = await axios.get(`https://reddit.com/r/memes/random/.json`,{
@@ -24,7 +23,6 @@ module.exports = {
                 .setTitle(`${data.title}`)
                 .setURL(`https://reddit.com${data.permalink}`)
                 .setImage(`${data.url}`)
-                .setDescription(`${data.author}\n${data.selftext}`)
                 .setColor("#FFAEC9")
                 .setTimestamp()
                 .setFooter({ text: `Requested by ${interaction.user.tag}`, iconURL: interaction.user.displayAvatarURL() });
