@@ -5,7 +5,7 @@ let isBotStatusEnabled = false;
 function getRandomActivity(client) {
     const activityOptions = [
         {
-            name: `Music`,
+            name: `Music SOON!!!`,
             type: ActivityType.Listening,
         }, {
             name: `/help`,

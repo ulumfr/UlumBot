@@ -5,5 +5,6 @@
     "CLIENTTENORKEY": "CLIENT TENOR KEY",
     "REMOVEBGAPI": "REMOVE BG API KEY",
     "OPENAIAPI": "OPEN AI API KEY",
-    "RAPIDAPI": "RAPID API KEY"
+    "RAPIDAPI": "RAPID API KEY",
+    "BARDPSID": "BARD PSID <https://barddocs.nishantapps.in/tutorials/getting-psid>"
 }
