@@ -78,7 +78,7 @@ module.exports = {
                 new ButtonBuilder()
                     .setLabel('Ulum Bot Invite')
                     .setStyle(ButtonStyle.Link)
-                    .setURL(`hrttps://discod.com/oauth2/authorize?client_id=${interaction.client.user.id}&permissions=8&scope=bot+applications.commands`),
+                    .setURL(`https://discord.com/oauth2/authorize?client_id=${interaction.client.user.id}&permissions=8&scope=bot+applications.commands`),
             ),
         ];
 
