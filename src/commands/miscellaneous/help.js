@@ -76,13 +76,9 @@ module.exports = {
 
             new ActionRowBuilder().addComponents(
                 new ButtonBuilder()
-                    .setLabel('Server Penguasa Rakyat')
-                    .setStyle(ButtonStyle.Link)
-                    .setURL('https://discord.gg/y6MfNeXKPj'),
-                new ButtonBuilder()
                     .setLabel('Ulum Bot Invite')
                     .setStyle(ButtonStyle.Link)
-                    .setURL(`https://discord.com/oauth2/authorize?client_id=${interaction.client.user.id}&permissions=8&scope=bot+applications.commands`),
+                    .setURL(`hrttps://discod.com/oauth2/authorize?client_id=${interaction.client.user.id}&permissions=8&scope=bot+applications.commands`),
             ),
         ];
 

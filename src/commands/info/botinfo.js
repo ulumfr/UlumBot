@@ -35,21 +35,21 @@ module.exports = {
             .setThumbnail(client.user.displayAvatarURL({ dynamic: true }))
             .setTimestamp()
             .addFields(
-                { name: "<:bot:1123907158359158854> Client", value: client.user.tag, inline: false },
-                { name: "<:developer:1123960341819301898> Developer", value: `${client.application.owner.tag || "None"}`, inline: false },
-                { name: ":calendar_spiral: Created", value: `27-07-2023`, inline: false },
+                { name: ":robot: Client", value: client.user.tag, inline: false },
+                { name: "<:ActiveDeveloper:1134785935423324232> Developer", value: `${client.application.owner.tag || "None"}`, inline: false },
+                { name: ":calendar: Created", value: `27-07-2023`, inline: false },
                 { name: "<a:timer:1123960449914900603> Uptime", value: `${uptime}`, inline: false },
-                { name: "<:signal:1123960930661826620> Latency", value: `${client.ws.ping}ms`, inline: false },
+                { name: ":signal_strength: Latency", value: `${client.ws.ping}ms`, inline: false },
                 { name: ":bar_chart: Database", value: status[connection.readyState], inline: false },
-                { name: "<:nodejs:1123961023452426382> Node.js", value: process.version, inline: false },
-                { name: "<:djs:1123961072639029338> Discord.js", value: version, inline: false },
-                { name: "<:slash:1123961124216393728> Commands", value: `${client.commands.size}`, inline: false },
-                { name: "<:server:1123958202065747969> Servers", value: `${client.guilds.cache.size}`, inline: false },
+                { name: "<:Nodejs:1180516606024106054> Node.js", value: process.version, inline: false },
+                // { name: "<:djs:1123961072639029338> Discord.js", value: version, inline: false },
+                { name: "<:SlashCommands:1134785890238091385> Commands", value: `${client.commands.size}`, inline: false },
+                { name: "<:Server:1180517744542752828> Servers", value: `${client.guilds.cache.size}`, inline: false },
                 { name: ":busts_in_silhouette: Users", value: `${client.guilds.cache.reduce((acc, guild) => acc + guild.memberCount, 0)}`, inline: false }
             )
 
         await interaction.editReply({embeds: [botinfoEmbed] });
-        await wait(10000);
+        await wait(20000);
         await interaction.deleteReply();
     }
 };
